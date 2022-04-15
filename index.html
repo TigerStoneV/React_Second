@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,7 +28,6 @@
   </style>
   <body>
     <div id="root"></div>
-    <button id="btn_plus">+</button>
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -41,30 +40,11 @@
       console.log(React);
       console.log(ReactDOM);
 
-      // React Component   <p> props.message : props.count</p>
-      const Component = props => {
-        return React.createElement(
-          "p",
-          null,
-          `${props.message} : ${props.count}`
-        );
-      };
-
-      // ReactDOM.render(/* React Component*/ , document.querySelector('#root'));
+      // 1. 태그 이름 문자열 type
       ReactDOM.render(
-        React.createElement(Component, { message: "init", count: 0 }, null),
+        React.creatElement("h1", null, `type 이 "태그 이름 문자열" 입니다 .`),
         document.querySelector("#root")
       );
-      document.querySelector("#btn_plus").addEventListener("click", () => {
-        ReactDOM.render(
-          React.createElement(
-            Component,
-            { message: "update", count: 10 },
-            null
-          ),
-          document.querySelector("#root")
-        );
-      });
     </script>
   </body>
 </html>
